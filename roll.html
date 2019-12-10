@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="animate.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="box">
+    <div id="header">
+        <div id="head">
+            <div id="roll">[温馨提示]最近有不少不法分子在网上骗人，请大家注意！！！</div>
+        </div>
+    </div>
+    <div class="container" id="container">
+        <div class="contain" id="contain">
+            <div class="picture"><img src="./images/b5.png"></div>
+            <div class="picture"><img src="./images/b1.png"></div>
+            <div class="picture"><img src="./images/b2.png"></div>
+            <div class="picture"><img src="./images/b3.png"></div>
+            <div class="picture"><img src="./images/b4.png"></div>
+            <div class="picture"><img src="./images/b5.png"></div>
+            <div class="picture"><img src="./images/b1.png"></div>
+        </div>
+        <span id="left"><</span>
+        <span id="right">></span>
+        <ul class="nav" id="nav">
+            <li class="change">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+</body>
+<!-- <script>
+    var container=document.getElementById("container");
+    var navList=document.getElementsByTagName("li");
+    var contain=document.getElementById("contain");
+    var left=document.getElementById("left");
+    var right=document.getElementById("right");
+    var head=document.getElementById("head");
+    var roll=document.getElementById("roll");
+    var index=1;
+    var timer;
+    var isMoving=false;
+    function getStyle(obj,style) {  
+		if(obj.currentStyle) 
+		{  
+		    return obj.currentStyle[style];  
+		} 
+		else 
+		{  
+		    return getComputedStyle(obj)[style];  
+		}  
+	}
+
+    //循环滚动通知
+    window.onload=function(){
+        var time=setInterval(function(){
+            var distance=parseInt(getStyle(roll,"left"));
+            roll.style.left=distance-4+"px";
+            if(distance<=-400){
+                roll.style.left=distance+1600+"px";
+            }
+        },60)
+    }
+
+    //鼠标划上时清除定时器
+    container.onmouseover=function(){
+        animate(left,{opacity:50});
+        animate(right,{opacity:50});
+        clearInterval(timer);
+    }
+
+    //鼠标划出加上定时执行器
+    container.onmouseout=function(){
+        animate(left,{opacity:0})
+        animate(right,{opacity:0})
+        timer=setInterval(right.onclick,3000);
+    }
+
+    //按钮点击切换图片
+    for(var i=0;i<navList.length;++i){
+        navList[i].index=i;
+        navList[i].onclick=function(){
+            index=this.index+1;
+            navAlter();
+            animate(contain,{left:-1200*index});
+        }
+    }
+
+    //点击右箭头时，切换下一个照片
+    right.onclick=function(){
+        if(isMoving){
+            return;
+        }
+        isMoving=true;
+        index++;
+        navAlter();
+        animate(contain,{left:-1200*index},function(){
+            if(index===6){
+                contain.style.left="-1200px";
+                index=1; 
+            }
+            isMoving=false;
+        });
+    }
+    //点击左箭头时，切换到上一个照片
+    left.onclick=function(){
+        if(isMoving){
+            return;
+        }
+        isMoving=true;
+        index--;
+        navAlter();
+        animate(contain,{left:-1200*index},function(){
+            if(index===0){
+                contain.style.left="-6000px";
+                index=5;
+            }
+            isMoving=false;
+        });
+    }
+    
+     //按钮换颜色的事件
+     function navAlter(){
+        for(var i=0;i<navList.length;++i){
+            navList[i].className="";
+        }
+        if(index>5){
+            navList[0].className="change";
+        }else if(index===0){
+            navList[4].className="change";
+        }else{
+            navList[index-1].className="change";
+        }
+    }
+    timer=setInterval(right.onclick,3000);
+</script> -->
+</html>
